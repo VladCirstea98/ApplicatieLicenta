@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dashboard-Asset Management For Business</title>
+	<link rel="stylesheet" type="text/css" href="CSS/login.css">
+	<script src="https://use.fontawesome.com/0c7a3095b5.js"></script>
+</head>
+<body>
+	<div id="dashboardMainContainer">
+		<div class="dashboard_sidebar" id="dashboard_sidebar">
+			<h3 class="dashboard_logo" id="dashboard_logo"> AMB</h3>
+			<div class="dashboard_sidebar_user">
+				<img src="Images/User/Vlad.jpg" alt="User image." id="userImage"/>
+				<span>Vlad</span>
+			</div>
+			<div class="dashboard_sidebar_menus">
+				<ul class="dashboard_menu_lists">
+					<li class="menuActive">
+						<a href="" ><i class="fa fa-dashboard menuIcons"></i> Dashboard </a>
+					</li>
+					<li>
+						<a href=""><i class="fa fa-dashboard menuIcons"></i> Dashboard </a>
+					</li>
+				</ul>
+
+			</div>
+		</div>
+		<div class="dashboard_content_container" id="dashboard_content_container">
+			<div class="dashboard_topnav">
+				<a href="" id="toggleBtn"><i class= "fa fa-navicon"></i></a>
+				<a href="" id="logoutBtn"><i class= "fa fa-power-off"></i>Log-off</a>
+			</div>
+			<div class="dashboard_content">
+				<div class="dashboard_content_main">
+					
+				</div>
+			</div>
+		</div>
+	</div>
+
+<script>
+	var sideBarIsOpen = true;
+
+	toggleBtn.addEventListener( 'click', (event) => {
+		event.preventDefault();
+		if(sideBarIsOpen){
+
+		dashboard_sidebar.style.width='10%';
+		dashboard_content_container.style.width ='90%';
+		dashboard_logo.style.fontSize= '60px';
+		userImage.style.width= '60px';
+
+		menuIcons = document.getElementsbyClassName('menuIcons');
+		for(var i=0; i < menuIcons.length;i++){
+			menuIcons[i].style.display = 'none';
+		}
+		console.log(menuIcons);
+		sideBarIsOpen = false;
+	}
+	else {
+		dashboard_sidebar.style.width='30%';
+		dashboard_content_container.style.width ='80%';
+		dashboard_logo.style.fontSize= '80px';
+		userImage.style.width= '80px';
+
+		menuIcons = document.getElementsbyClassName('menuIcons');
+		for(var i=0; i < menuIcons.length;i++){
+			menuIcons[i].style.display = 'inline-block';
+		}
+		console.log(menuIcons);
+		sideBarIsOpen = true;
+	}
+	});
+ </script>
+</body>
+</html>
